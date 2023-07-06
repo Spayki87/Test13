@@ -14,19 +14,14 @@ namespace Консольное_меню
             const string CommandSetPassword = "2";
             const string CommandChangeConsoleColor = "3";
             const string CommandIsEscExitProgram = "4";
-            const string CommandWriteName = "5";
 
+            string userName;
             string userInput;
-            string yourName;
-            int tryCount = 3;
-            string password;
-            string userInputPassword;
-            int remainingAttempts;
             bool isExitProgram = true;
 
             Console.WriteLine("Добро пожаловать в программу.");
 
-            while (isExitProgram == true)
+            while (isExitProgram)
             {
                 Console.WriteLine(CommandYourName + " - введите свое имя.");
                 Console.WriteLine(CommandSetPassword + " - введите пароль.");
@@ -38,46 +33,34 @@ namespace Консольное_меню
                 {
                     case CommandYourName:
                         Console.WriteLine("Ввдите свое имя:");
-                        yourName = Console.ReadLine();
+                        userName = Console.ReadLine();
                         break;
 
                     case CommandSetPassword:
                         Console.WriteLine("Введите пароль:");
-                        password = Console.ReadLine();
-
-                        for (int i = 0; i < tryCount; i++)
-                        {
-                            Console.WriteLine("Введите пароль:");
-                            userInputPassword = Console.ReadLine();
-
-                            remainingAttempts = tryCount - i - 1;
-
-                            if (password == userInputPassword)
-                            {
-                                Console.WriteLine("Пароль верный.");
-                                Console.WriteLine(CommandWriteName + " - введите как вас будут называть в программе:");
-                                break;
-                            }
-
-                            else
-                            {
-                                Console.WriteLine("Пароль не верный, у вас осталось " + (remainingAttempts) + " попыток.");
-                            }
-                        }
+                        Console.ReadLine();
                         break;
 
                     case CommandChangeConsoleColor:
-                        Console.WriteLine("Выберите красный цвет консоли:");
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.Clear();
+                        Console.WriteLine("Выберите цвет консоли:");
+                        Console.WriteLine("1 - красный цвет.");
+                        Console.WriteLine("2 - синий цвет.");
+                        Console.WriteLine("3 - зеленый цвет");
+                        userInput = Console.ReadLine();
+                        if (userInput == "1")
+                            Console.BackgroundColor = ConsoleColor.Red;
+                        if (userInput == "2")
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                        if (userInput == "3")
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            Console.Clear();
                         break;
 
-                    case (CommandIsEscExitProgram):
+                    case CommandIsEscExitProgram:
                         isExitProgram = false;
+                        Console.WriteLine("Вы вышли из программы");
                         break;
                 }
-
-                Console.WriteLine("Вы вышли из программы");
             }
         }
     }
