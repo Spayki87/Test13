@@ -52,17 +52,17 @@ namespace Консольное_меню
                         Console.WriteLine(colorGreen + " - зеленый цвет");
                         userInput = Console.ReadLine();
 
-                        if (userInput == "1")
+                        if (userInput == Convert.ToString(colorRed))
                         {
                             Console.BackgroundColor = ConsoleColor.Red;
                             Console.Clear();
                         }
-                        else if (userInput == "2")
+                        else if (userInput == Convert.ToString(colorBlye))
                         {
                             Console.BackgroundColor = ConsoleColor.Blue;
                             Console.Clear();
                         }
-                        else if (userInput == "3")
+                        else if (userInput == Convert.ToString(colorGreen))
                         {
                             Console.BackgroundColor = ConsoleColor.Green;
                             Console.Clear();
