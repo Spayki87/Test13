@@ -18,9 +18,9 @@ namespace Консольное_меню
             string userName;
             string userPassword;
             string userInput;
-            int colorRed = 1;
-            int colorBlye = 2;
-            int colorGreen = 3;
+            string colorRed = "1";
+            string colorBlye = "2";
+            string colorGreen = "3";
             bool isExitProgram = true;
 
             Console.WriteLine("Добро пожаловать в программу.");
@@ -52,17 +52,17 @@ namespace Консольное_меню
                         Console.WriteLine(colorGreen + " - зеленый цвет");
                         userInput = Console.ReadLine();
 
-                        if (userInput == Convert.ToString(colorRed))
+                        if (userInput == colorRed)
                         {
                             Console.BackgroundColor = ConsoleColor.Red;
                             Console.Clear();
                         }
-                        else if (userInput == Convert.ToString(colorBlye))
+                        else if (userInput == colorBlye)
                         {
                             Console.BackgroundColor = ConsoleColor.Blue;
                             Console.Clear();
                         }
-                        else if (userInput == Convert.ToString(colorGreen))
+                        else if (userInput == colorGreen)
                         {
                             Console.BackgroundColor = ConsoleColor.Green;
                             Console.Clear();
